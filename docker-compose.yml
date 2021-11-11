@@ -1,0 +1,29 @@
+version: '3'
+services:
+  frontend:
+    build: ./crud-app # create docker image for frontend app and push it to docker hub
+    ports:
+      - 8085:80
+  mongo:
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - 27017:27017
+  api:  # create docker image for backend app and push it to docker hub
+    build: ./node-app
+    restart: always 
+    volumes:
+      - ./node-app/app:/app
+      - /app/node_modules
+    depends_on:
+      - mongo
+    environment: 
+      WAIT_HOSTS: mongo:27017
+      PORT: 1008
+    ports: 
+      - "1008:1008"
+  
+
+    
+    

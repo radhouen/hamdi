@@ -1,0 +1,29 @@
+<div style="min-width: 600px">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter Employee Email" (ngModelChange)="employeeSearch($event)" [(ngModel)]="emailSearch">
+        <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">Dynamic Search</span>
+        </div>
+    </div>
+
+    <form #employeeUpdate="ngForm" (ngSubmit)="onClickSubmit(employeeUpdate.value)">
+        <div class="form-group">
+          <label>Employee ID</label>
+          <input type="text" class="form-control" name="empId" placeholder="Employee ID" [(ngModel)]="eid" readonly>
+        </div>
+        <div class="form-group">
+          <label>Employee Name</label>
+          <input type="text" class="form-control" name="empName" placeholder="Employee Name" [(ngModel)]="name">
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" class="form-control" name="empEmail" placeholder="Employee Email" [(ngModel)]="email">
+        </div>
+        <button type="submit" class="btn btn-primary">Update Employee</button>
+      </form>
+
+    <!-- Terminal -->
+    <div *ngIf="showResult" class="terminal">
+        <pre>{{result}}</pre>
+    </div>
+</div>

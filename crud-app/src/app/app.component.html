@@ -1,0 +1,52 @@
+<!-- Toolbar -->
+<div class="toolbar" role="banner">
+  <img
+    width="100"
+    alt="Angular Logo"
+    src="../assets/img/miracle-logo-dark.png"
+  />
+  <div class="spacer"></div>
+  <span class="header-text">Built with <fa-icon style="color:red" [icon]="faHeart"></fa-icon> by Miracle's Innovation Labs!</span>
+</div>
+
+<div class="content" role="main">
+
+  <!-- Next Steps -->
+  <h2>Create - Retrieve - Update - Delete</h2>
+  <p>Employee Model CRUD Operations</p>
+
+  <input type="hidden" #selection>
+
+  <div class="card-container">
+    <div class="card card-small" (click)="showCreateComponent($event)" tabindex="0">
+      <span><fa-icon class="menu-icons" [icon]="faPlusCircle"></fa-icon>Create</span>
+    </div>
+
+    <div class="card card-small" (click)="showRetrieveComponent($event)" tabindex="0">
+      <span><fa-icon class="menu-icons" [icon]="faFilter"></fa-icon>Retrieve</span>
+    </div>
+
+    <div class="card card-small" (click)="showUpdateComponent($event)" tabindex="0">
+      <span><fa-icon class="menu-icons" [icon]="faClipboard"></fa-icon>Update</span>
+    </div>
+
+    <div class="card card-small" (click)="showDeleteComponent($event)" tabindex="0">
+      <span><fa-icon class="menu-icons" [icon]="faMinusCircle"></fa-icon>Delete</span>
+    </div>
+  </div>
+  <app-create *ngIf = "showCreate"></app-create>
+  <app-retrieve *ngIf = "showRetrieve"></app-retrieve>
+  <app-update *ngIf = "showUpdate"></app-update>
+  <app-delete *ngIf = "showDelete"></app-delete>
+</div>
+
+
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+

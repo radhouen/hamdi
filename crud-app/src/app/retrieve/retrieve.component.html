@@ -1,0 +1,32 @@
+<div style="min-width: 600px">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter Employee Email"
+            (ngModelChange)="employeeSearch($event)" [(ngModel)]="emailSearch">
+        <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">Dynamic Search</span>
+        </div>
+    </div>
+
+    <table *ngIf="searchResult" class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Employee Name</th>
+                <th scope="col">Email ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <th scope="col">{{employee._id}}</th>
+                <th scope="col">{{employee.name}}</th>
+                <th scope="col">{{employee.email}}</th>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <!-- Terminal -->
+    <div *ngIf="showResult" class="terminal">
+        <pre>{{result}}</pre>
+    </div>
+</div>
